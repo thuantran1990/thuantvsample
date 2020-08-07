@@ -5,8 +5,19 @@
 		<section class="user_info">
 			<h1>
 				<%= gravatar_for @user %>
-				<%= @user.name %>
+				<li>Ho ten: <%= @user.name %></li>
+				<li> Que quan: <%= @user.que_quan %></li>
+				<li>Gioi tinh: 
+					<%if @user.gioi_tinh ==1%>
+						nam
+					<%elsif @user.gioi_tinh ==0%>
+						nu
+					<%else%>
+					NA
+ 					<%end %> </li>
+				<li>Ngay sinh: <%=@user.date_of_birth %></li>
 			</h1>
 		</section>
 	</aside>
+				
 </div>
