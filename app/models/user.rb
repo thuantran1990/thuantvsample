@@ -6,9 +6,10 @@ class User < ApplicationRecord
 		format: { with: VALID_EMAIL_REGEX },uniqueness: true
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }
-	
+
 	private
+
  	def downcase_email
-    	self.email = email.downcase 
- 	end
+ 		self.email = email.downcase 
+    end
 end
