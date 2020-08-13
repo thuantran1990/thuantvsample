@@ -22,7 +22,7 @@ body {
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
-line-height: 1;
+	line-height: 1;
 }
 h1 {
 	font-size: 3em;
@@ -67,7 +67,7 @@ footer {
 	color: #777;
 }
 footer a {
-color: #555;
+	color: #555;
 }
 footer a:hover {
 	color: #222;
@@ -209,6 +209,61 @@ aside {
 	}
 }
 
+ul {
+	float: right;
+	list-style: none;
+	li {
+
+	float: left;
+	margin-left: 15px;
+	}
+}
+
+}
+
+/* mixins, variables, etc. */
+$gray-medium-light: #eaeaea;
+@mixin box_sizing {
+	-moz-box-sizing:
+	border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:
+	border-box;
+}
+/* miscellaneous */
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
+
+/* sidebar */
+aside {
+	section.user_info {
+		margin-top: 20px;
+	}
+	section {
+		padding: 10px 0;
+		margin-top: 20px;
+		&:first-child {
+		border: 0;
+		padding-top: 0;
+	}
+	span {
+		display: block;
+		margin-bottom: 3px;
+		line-height: 1;
+	}
+	h1 {
+		font-size: 1.4em;
+		text-align: left;
+		letter-spacing: -1px;
+		margin-bottom: 3px;
+		margin-top: 0px;
+	}
+}
 .gravatar {
 	float: left;
 	margin-right: 10px;
@@ -240,4 +295,27 @@ input {
 	.form-control {
 		color: $state-danger-text;
 	}
+}
+
+
+/* phan chinh sua home dung them bootstrap*/
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
 }
