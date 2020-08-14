@@ -219,7 +219,6 @@ ul {
 	}
 }
 
-}
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
@@ -250,7 +249,7 @@ aside {
 		&:first-child {
 		border: 0;
 		padding-top: 0;
-	}
+	}   }
 	span {
 		display: block;
 		margin-bottom: 3px;
@@ -297,7 +296,6 @@ input {
 	}
 }
 
-
 /* phan chinh sua home dung them bootstrap*/
 html {
   font-size: 14px;
@@ -307,15 +305,16 @@ html {
     font-size: 16px;
   }
 }
-
 .container {
   max-width: 960px;
 }
-
 .pricing-header {
   max-width: 700px;
 }
-
 .card-deck .card {
   min-width: 220px;
+}
+
+li{
+	list-style-type: none;
 }

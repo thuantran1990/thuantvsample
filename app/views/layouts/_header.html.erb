@@ -1,13 +1,31 @@
 
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  	<h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-  	<nav class="my-2 my-md-0 mr-md-3">
-	    <a class="p-2 text-dark" href="#">Log in</a>
-	    <a class="p-2 text-dark" href="#">Enterprise</a>
-	    <a class="p-2 text-dark" href="/static_pages/help">Help</a>
-	    <a class="p-2 text-dark" href="#">Pricing</a>
-	    <a class="p-2 text-dark" href="/static_pages/home">Home</a>
+    <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+    	<a class="p-2 text-dark" href="/help">Help</a>
+	    <li class="btn btn-outline-primary"><%= link_to "Home", root_path %></li>
   	</nav>
-  	<%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+    <% if logged_in? %>
+		<li class="btn btn-outline-primary"><%= link_to "Users", '#' %></li>
+		<li class="dropdown">
+			<a href="#" class="" data-toggle="dropdown">
+				Account <b class="caret"></b>
+			</a>
+			<ul class="dropdown-menu">
+				<li><%= link_to "Profile", current_user %></li>
+				<li><%= link_to "Settings", '#' %></li>
+				<li class="divider"></li>
+				<li>
+				<%= link_to "Log out", logout_path, method: :delete %>
+				</li>
+			</ul>
+		</li>
+	<% else %>
+		<li><%= link_to "Log in", login_path %></li>
+		<a class="btn btn-outline-primary" href="/signup">Sign up</a>
+	<% end %>
 </div>
+
+
 

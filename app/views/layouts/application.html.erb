@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Pricing example · Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Pricing example · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
-
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
     <!-- Bootstrap core CSS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- Favicons -->
@@ -22,33 +23,34 @@
 	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
 	<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#563d7c">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
           font-size: 3.5rem;
-        }
       }
-    </style>
+    }
+  </style>
     <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
-  <head>
 		<%= render 'layouts/shim' %>
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
 		<div class="container">
 			<% flash.each do |message_type, message| %>
-			<div class="alert alert-<%= message_type %>"><%= message %></div>
+			   <div class="alert alert-<%= message_type %>"><%= message %></div>
 			<% end %>
 			<%= yield %>
 			<%= render 'layouts/footer' %>
