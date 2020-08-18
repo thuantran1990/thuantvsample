@@ -13,6 +13,25 @@
 		<%= f.password_field :password, class: 'form-control' %>
 		<%= f.label :password_confirmation, "Confirmation" %>
 		<%= f.password_field :password_confirmation, class: 'form-control' %>
+		<%= f.label :que_quan %>
+		<%= f.text_field :que_quan, class: 'form-control' %>
+		<%= f.label :date_of_birth %>
+		<%= f.date_field :date_of_birth, class: 'form-control' %>
+
+		<table>
+			<tr>
+				<td><%= f.radio_button :gioi_tinh,1, class: 'form-control' %></td>
+				<td>Nam</td>
+			</tr>
+			<tr>
+				<td><%= f.radio_button :gioi_tinh,0, class: 'form-control' %></td>
+				<td>Nu<td>
+			</tr>
+			<tr>
+				<td><%= f.radio_button :gioi_tinh,2,class: 'form-control'%></td>
+				<td>N/A</td>
+			</tr>
+		</table>
 		<%= f.submit "Create my account", class: "btn btn-primary" %>
 	<% end %>
 	</div>
