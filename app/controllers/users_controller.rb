@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
 	def show
 		@microposts = @user.microposts.paginate(page: params[:page])
+
 	end
 
 	def new
@@ -48,6 +49,18 @@ class UsersController < ApplicationController
 		redirect_to users_url
 	end
 
+	def following
+		@title = "Following"
+		@user = User.find(params[:id])
+		@users = @user.following.paginate(page: params[:page])
+		render 'show_follow'
+	end
+	def followers
+		@title = "Followers"
+		@user = User.find(params[:id])
+		@users = @user.followers.paginate(page: params[:page])
+		render 'show_follow'
+	end
 	private
 	def user_params
 		params.require(:user).permit(:name, :email, :password,:password_confirmation,:date_of_birth,:gioi_tinh,:que_quan)
