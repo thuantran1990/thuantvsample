@@ -9,7 +9,10 @@ class User < ApplicationRecord
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 },allow_nil: true	
 
-	
+	def current_user?(user)
+		user && user == self
+	end
+
 	class << self
 # Returns the hash digest of the given string.
 		def digest(string)
@@ -37,14 +40,18 @@ class User < ApplicationRecord
 			update_attributes remember_digest: nil
 	end
 
+
 	private
  	 def downcase_email
     	self.email = email.downcase 
  	 end
+
  	 def for_date_of_birth
  	 	if date_of_birth <= Date.current
  	 	else
 		 	errors.add(:date_of_birth, 'mày đen từ tương lai à')
  	 	end
  	 end
+
+	# Returns true if the given user is the current user.
 end
